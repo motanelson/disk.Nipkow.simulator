@@ -1,1 +1,1 @@
-pdf printer
+bus conector pcb
