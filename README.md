@@ -1,2 +1,2 @@
-house builder simulator
+simulator of Nipkow
 
