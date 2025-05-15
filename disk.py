@@ -31,6 +31,8 @@ class NipkowDiskApp:
             self.center + self.radius, self.center + self.radius,
             outline="black", width=2
         )
+        self.canvas.create_line(self.center, self.center, self.center + math.cos(math.radians(36*7)) * (self.radius), self.center + math.sin(math.radians(36*7)) * (self.radius), width=2)
+        self.canvas.create_line(self.center, self.center, self.center + math.cos(math.radians(36*8)) * (self.radius), self.center + math.sin(math.radians(36*8)) * (self.radius), width=2)
 
         for i in range(self.num_holes):
             z=z+7
@@ -43,12 +45,12 @@ class NipkowDiskApp:
             
             
             # Coordenadas do final da linha (na borda do disco)
+            
             x = self.center + math.cos(angle_rad) * (self.radius- z - 10)
             y = self.center + math.sin(angle_rad) * (self.radius -z- 10)
 
             # Linha do centro até o ponto
-            self.canvas.create_line(self.center, self.center, x, y, width=2)
-
+            
             # Círculo no final da linha (ponto)
             r = 6
             color= "black"
@@ -58,7 +60,7 @@ class NipkowDiskApp:
             )
              
             color = "red" 
-            if angle_deg>(36*6) and angle_deg<(36*7):
+            if angle_deg>(36*7) and angle_deg<(36*8):
                 self.canvas.create_oval(x - r, y - r, x + r, y + r,fill=color)
 
     def animate(self):
